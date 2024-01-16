@@ -17,7 +17,7 @@ int main(__attribute__((unused)) int argc, __attribute__((unused)) char const *a
 
         std::vector<std::string> res;
 
-        res = ipFilter.filter(256);
+        res = ipFilter.filter(1);
         IPUtils::print(res);
 
         res = ipFilter.filter(46, 70);
