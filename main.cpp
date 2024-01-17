@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 #include "lib.hpp"
 
 
@@ -11,7 +12,6 @@ int main(__attribute__((unused)) int argc, __attribute__((unused)) char const *a
         std::vector<std::string> ip_pool;
         IPUtils::read_ip_pool(ip_pool);
         std::sort(ip_pool.begin(), ip_pool.end(), IPUtils::compareIp);
-
         IpFilter ipFilter = IpFilter(ip_pool);
         IPUtils::print(ipFilter.get_ip_pool());
 
