@@ -21,7 +21,7 @@ target_link_libraries(tests lib)
 add_test(UnitTests tests)
 
 set_target_properties(main tests lib PROPERTIES
-    CXX_STANDARD 14
+    CXX_STANDARD 11
     CXX_STANDARD_REQUIRED ON
 )
 
