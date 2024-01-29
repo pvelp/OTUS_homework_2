@@ -1,5 +1,6 @@
  #include <gtest/gtest.h>
  #include <algorithm>
+
  #include "lib.hpp"
 
  TEST(VersionTest, BasicAssertions) {

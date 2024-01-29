@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <array>
 #include <vector>
 #include <algorithm>
 #include "lib.hpp"
