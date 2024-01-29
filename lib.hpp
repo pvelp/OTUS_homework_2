@@ -1,37 +1,33 @@
-//#pragma once
-
 #include <vector>
 #include <string>
 
 int version();
 
-class IPUtils {
+class IPUtils
+{
 public:
-    static void read_ip_pool(std::vector<std::string> &ip_pool);
+    static void read_ip_pool(std::vector<std::array<uint8_t, 4>> &ip_pool);
 
     static std::vector<std::string> split(const std::string &str, char d);
 
-    static std::vector<int> convertIp(const std::string &ip);
-
-    static void print(const std::vector<std::string>& list);
-
-    static bool compareIp(const std::string &a, const std::string &b);
+    static void print(const std::vector<std::array<uint8_t, 4>> &l);
 };
 
-
-class IpFilter {
+class IpFilter
+{
 private:
-    std::vector<std::string> ip_pool;
+    std::vector<std::array<uint8_t, 4>> ip_pool;
+
 public:
-    explicit IpFilter(std::vector<std::string> ip_list);
+    explicit IpFilter(std::vector<std::array<uint8_t, 4>> ip_list);
 
-    std::vector<std::string> filter(uint8_t first_byte);
+    std::vector<std::array<uint8_t, 4>> filter(uint8_t first_byte);
 
-    std::vector<std::string> filter(uint8_t first_byte, uint8_t second_byte);
+    std::vector<std::array<uint8_t, 4>> filter(uint8_t first_byte, uint8_t second_byte);
 
-    std::vector<std::string> filter_any(uint8_t byte_value);
+    std::vector<std::array<uint8_t, 4>> filter_any(uint8_t byte_value);
 
-    std::vector<std::string> get_ip_pool() const;
+    std::vector<std::array<uint8_t, 4>> get_ip_pool() const;
 
     ~IpFilter();
 };

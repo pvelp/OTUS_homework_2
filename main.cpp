@@ -5,17 +5,17 @@
 #include "lib.hpp"
 
 
-int main(__attribute__((unused)) int argc, __attribute__((unused)) char const *argv[])
+int main()
 {
     try
     {
-        std::vector<std::string> ip_pool;
+        std::vector<std::array<uint8_t , 4>> ip_pool;
         IPUtils::read_ip_pool(ip_pool);
-        std::sort(ip_pool.begin(), ip_pool.end(), IPUtils::compareIp);
+        std::sort(ip_pool.rbegin(), ip_pool.rend());
         IpFilter ipFilter = IpFilter(ip_pool);
-        IPUtils::print(ipFilter.get_ip_pool());
+//        IPUtils::print(ipFilter.get_ip_pool());
 
-        std::vector<std::string> res;
+        std::vector<std::array<uint8_t, 4>> res;
 
         res = ipFilter.filter(1);
         IPUtils::print(res);
